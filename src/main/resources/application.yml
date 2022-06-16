@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/imooc_mall?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  redis:
+    host: localhost
+    port: 6379
+
+
+
+server:
+  port: 8090
+mybatis:
+  configuration:
+    # SQL执行日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 扫描 mybatis xml
+  mapper-locations: classpath:com/chen/mall/model/mapper/*.xml
+
+# 上传文件的路径，根据部署情况，自行修改
+file:
+  upload:
+    dir: E:\Java\projects\mallProject\uploadFile\
+    ip: 127.0.0.1
+
